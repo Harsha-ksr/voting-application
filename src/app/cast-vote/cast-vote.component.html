@@ -1,0 +1,51 @@
+<body data-spy="scroll" data-target=".navbar" data-offset="400">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" style="margin-left: 25px;" href="voting-home">Home</a>
+        <a class="navbar-brand" style="margin-left: 900px;" href="login">Logout : {{this.userId}}</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="view-results">View Results</a></li>
+          <li><a href="cast-vote">Cast Vote</a></li>
+          <li><a href="create-question">Create Question</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form #userForm="ngForm">
+    <h3>CAST VOTE</h3>
+    <h2>In this section, you can cast vote to diverse questions posted by multiple users. The options can be Yes or No.</h2>
+      <div *ngIf="currentIndex < this.listOfQuestions.length; else elseBlock">
+        <label>{{ this.listOfQuestions[this.currentIndex] }}</label>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="yesOption" [(ngModel)]="this.castedVote" name="yesOption" value="Yes" (change)="onItemChange($event)">
+          <label class="form-check-label" for="radio1">Yes</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="noOption" [(ngModel)]="this.castedVote" name="noOption" value="No" (change)="onItemChange($event)">
+          <label class="form-check-label" for="radio2">No</label>
+        </div>
+        <button (click)="next()">Submit</button><br><br>
+        <button (click)="onNextQuestion()">Next Question</button>
+
+      </div>
+      <ng-template #elseBlock>
+        <div *ngIf="this.votingDetailsByUser.length > 1; else elseBlock">
+          <h2>Responses recorded. If you want to view results, Click on View Results Button on top right corner.</h2>
+          <h3>Your Responses = {{ this.votingDetailsByUserTemp}}</h3>
+        </div>
+        <ng-template #elseBlock>
+          <h2>No Responses recorded. Thank you for participation.</h2>
+        </ng-template>
+      </ng-template>
+    </form>
+  </body>

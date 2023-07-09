@@ -1,0 +1,25 @@
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+<form #userForm="ngForm">
+  <h3>Login Here</h3>
+
+  <label>Username</label>
+  <input type="text" name ="name" [(ngModel)]="loginObj.UserName" #name="ngModel" required pattern="[a-zA-Z0-9]*" minlength="5" maxlength="20" placeholder="UserName" id="username">
+  <div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert">
+
+  <div *ngIf="name.errors?.['required']">
+    User Name is required.
+  </div>
+  <div *ngIf="name.errors?.['pattern']">
+    Please enter only alpha-numeric characters.
+  </div>
+  <div *ngIf="name.errors?.['minlength']">
+    Username length cannot be less than 5.
+  </div>
+
+  </div>
+
+  <button style="color: rgb(39, 40, 36)" [disabled]="userForm.invalid" (click)="onLogin()">Log In</button>
