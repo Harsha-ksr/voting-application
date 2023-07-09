@@ -1,40 +1,23 @@
-<body data-spy="scroll" data-target=".navbar" data-offset="400">
-
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" style="margin-left: 25px;" href="voting-home">Home</a>
-        <a class="navbar-brand" style="margin-left: 900px;" href="login">Logout : {{userId}}</a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="view-results">View Results</a></li>
-          <li><a href="cast-vote">Cast Vote</a></li>
-          <li><a href="create-question">Create Question</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <h1>Voting Results</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Question</th>
-        <th>Total Votes</th>
-        <th>Yes %</th>
-        <th>No %</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let row of votesPerQuestion">
-        <td>{{ row.question }}</td>
-        <td>{{ row.totalVotes }}</td>
-        <td>{{ row.percY }}%</td>
-        <td>{{ row.percN }}%</td>
-      </tr>
-    </tbody>
-  </table>
-
-  </body>
+<div class="header-container">
+  <a class="logo" style="margin-left: 25px;" href="voting-home">Home</a>
+  <a class="logout" style="margin-left: 900px;" href="login">Logout : {{userId}}</a>
+</div>
+<h1>Voting Results</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Total Votes</th>
+      <th>Yes %</th>
+      <th>No %</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of votesPerQuestion">
+      <td>{{ row.question }}</td>
+      <td>{{ row.totalVotes }}</td>
+      <td>{{ row.percY }}%</td>
+      <td>{{ row.percN }}%</td>
+    </tr>
+  </tbody>
+</table>

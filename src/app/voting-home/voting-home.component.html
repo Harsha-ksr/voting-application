@@ -1,47 +1,20 @@
-<body data-spy="scroll" data-target=".navbar" data-offset="400">
-
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" style="margin-left: 25px;" href="voting-home">Home</a>
-        <a class="navbar-brand" style="margin-left: 900px;" href="login">Logout : {{userId}}</a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="view-results">View Results</a></li>
-          <li><a href="cast-vote">Cast Vote</a></li>
-          <li><a href="create-question">Create Question</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <h1>Voting Application</h1>
-  <div id="home">
-    <h1></h1>
-    <h2><strong> A simple voting application</strong></h2>
-    <p>The navbar is one of the prominent features of Bootstrap sites. Navbars are responsive 'meta' components that serve as navigation headers for your application or site. Navbars collapse in mobile views and become horizontal as the available viewport
-      width increases. At its core, the navbar includes styling for site names and basic navigation.</p>
-    <h2>Default Navbar properties <b>(Home)</b></h2>
-    <h3>To create a default navbar</h3>
-    <ul>
-      <li>Add the classes .navbar, .navbar-default to the &#60;nav&#62; tag.</li>
-      <li>Add role = "navigation" to the div tags at beginning of each section, to help with accessibility (IF you are not using the nav tag).</li>
-      <li>Add a header class .navbar-header to the &#60;div&#62; element.</li>
-      <li>Include an &#60;a&#62; element with class navbar-brand. I use #home for my brand here. This will give the text a slightly larger size.</li>
-      <li>To add links to the navbar, add an unordered list with the classes of .nav, .navbar-nav.</li>
-    </ul>
-  </div>
-
-  <div id="navbar">
-    <h2>Responsive Navbar <b>(NavBar Basics)</b></h2>
-    <h3> To add responsive features to the navbar, the content that you want to be collapsed needs to be wrapped in a &#60;div&#62; with classes .collapse, .navbar-collapse. </h3>
-    <h3>The collapsing nature is tripped by a button that has the class of .navbar-toggle and then features two data- elements.</h3>
-    <ul>
-      <li>data-toggle, is used to tell the JavaScript what to do with the button</li>
-      <li>data-target, indicates which element to toggle.</li>
-    </ul>
-    <h3>Then with a class .icon-bar create what we like to call the hamburger button. This will toggle the elements that are in the .nav-collapse &#60;div&#62;. For this feature to work, you need to include the Bootstrap Collapse Plugin.</h3>
-  </div>
-</body>
+<div class="header-container">
+  <a class="logo" style="margin-left: 25px;" href="voting-home">Home</a>
+  <a class="logout" style="margin-left: 900px;" href="login">Logout : {{userId}}</a>
+</div>
+<h1>Welcome to Voting Application..!</h1>
+<div class="collapse navbar-collapse" id="myNavbar">
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="create-question">Create Question</a></li>
+    <br>
+    <p>click on create question to create a new question for people to vote on</p>
+    <hr>
+    <li><a href="cast-vote">Cast Vote</a></li>
+    <br>
+    <p>click on cast-vote to vote on questions that you and other people have created.</p>
+    <hr>
+    <li><a href="view-results">View Results</a></li>
+    <br>
+    <p>click on view-results to check the voting results..</p>
+  </ul>
+</div>
